@@ -3,9 +3,9 @@ name: Metrics
 on:
   schedule:
     - cron: "0 0 * * *" # tous les jours à minuit UTC
-  workflow_dispatch:    # exécution manuelle
+  workflow_dispatch:
   push:
-    branches: ["master", "main"] # optionnel
+    branches: ["master", "main"]
 
 jobs:
   github-metrics:
@@ -16,3 +16,22 @@ jobs:
       - uses: VinceBmmrt/metricsGithub@master
         with:
           token: ${{ secrets.METRICS_TOKEN }}
+
+          # 🧩 Plugins activés
+          user: VinceBmmrt
+          template: classic
+          base: header, activity, community, repositories, metadata
+          config_timezone: Europe/Paris
+
+          plugin_languages: yes
+          plugin_languages_ignored: >-
+            html, css
+          plugin_languages_limit: 6
+
+          plugin_activity: yes
+          plugin_activity_limit: 5
+          plugin_activity_days: 14
+          plugin_activity_filter: all
+
+          plugin_repositories: yes
+          plugin_repositories_pinned: 3
