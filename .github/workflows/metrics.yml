@@ -1,8 +1,6 @@
 name: Metrics
 on:
-  schedule:
-    - cron: '0 0 * * *'  # Exécution quotidienne à minuit UTC
-  workflow_dispatch:     # Permet l'exécution manuelle
+  workflow_dispatch:
 
 jobs:
   generate:
@@ -13,6 +11,5 @@ jobs:
           token: ${{ secrets.METRICS_TOKEN }}
           user: VinceBmmrt
           template: classic
-          base: header, repositories
           plugin_languages: true
           plugin_languages_limit: 20
