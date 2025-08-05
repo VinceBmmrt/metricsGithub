@@ -24,7 +24,7 @@ jobs:
           template: classic
           output: github-metrics.svg
           dark: true
-          theme: dark_violet
+          theme: Tokyonight
           width: regular
           languages: true
           noCache: true
