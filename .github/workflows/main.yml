@@ -1,27 +1,21 @@
 name: GitHub Metrics
 
 on:
-  schedule: [{ cron: "0 0 * * *" }]
+  push:
+  schedule:
+    - cron: "0 0 * * *"
   workflow_dispatch:
 
 jobs:
   metrics:
     runs-on: ubuntu-latest
     steps:
-      - name: Metrics
+      - name: Generate Metrics
         uses: VinceBmmrt/metricsGithub@master
         with:
           token: ${{ secrets.METRICS_TOKEN }}
-
-          # Fichier de sortie
-          filename: metrics.repository.svg
-
-          # Template
-          template: repository
-          base: repositories
-
-          # Plugins activés
+          filename: metrics.user.svg
+          template: classic
           plugin_languages: yes
-          plugin_lines: yes
           plugin_isocalendar: yes
           plugin_isocalendar_duration: full-year
