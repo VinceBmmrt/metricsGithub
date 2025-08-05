@@ -8,7 +8,7 @@ jobs:
   generate:
     runs-on: ubuntu-latest
     steps:
-      - uses: lowlighter/metrics@latest
+      - uses: lowlighter/metrics@v2.9.3
         with:
           token: ${{ secrets.METRICS_TOKEN }}
           user: VinceBmmrt
