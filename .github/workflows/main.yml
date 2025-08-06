@@ -19,12 +19,9 @@ jobs:
           plugin_languages_indepth: yes
           plugin_languages_details: lines, bytes-size
           plugin_languages_limit: 100
-          plugin_languages_analysis_timeout: 60
           plugin_languages_threshold: 0%
-          plugin_languages_sections: most-used, recently-used
           plugin_languages_categories: programming, markup, data, prose
           commits_authoring: |
-            Vincent
             VinceBmmrt
             vincetbommert75@gmail.com
 
