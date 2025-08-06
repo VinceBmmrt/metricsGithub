@@ -23,5 +23,8 @@ jobs:
           plugin_languages_threshold: 0%
           plugin_languages_sections: most-used, recently-used
           plugin_languages_categories: programming, markup, data, prose
-          commits_authoring: Vincent, VinceBmmrt, vincebmmrt@users.noreply.github.com
+          commits_authoring: |
+            Vincent
+            VinceBmmrt
+            vincetbommert75@gmail.com
 
