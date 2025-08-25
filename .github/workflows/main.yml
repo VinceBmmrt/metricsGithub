@@ -9,7 +9,18 @@ jobs:
   metrics:
     runs-on: ubuntu-latest
     steps:
-      - uses: VinceBmmrt/metricsGithub@master 
+      # Checkout the repo
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Configure Git
+        run: |
+          git config user.name "Vincent Bmmrt"
+          git config user.email "vincentbmmrtpro@gmail.com"
+
+      # Run the metrics action
+      - name: Generate Metrics
+        uses: VinceBmmrt/metricsGithub@master
         with:
           token: ${{ secrets.METRICS_TOKEN }}
           filename: metrics.plugin.languages.indepth.svg
@@ -22,3 +33,11 @@ jobs:
           plugin_languages_details: lines, bytes-size
           plugin_languages_limit: 40
           plugin_languages_analysis_timeout: 1
+
+      # Commit and push changes
+      - name: Commit and Push
+        run: |
+          git add .
+          git commit -m "Update GitHub metrics" || echo "No changes to commit"
+          git push
+
